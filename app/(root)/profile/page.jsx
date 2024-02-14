@@ -6,8 +6,6 @@ import {useSession} from "next-auth/react";
 import {useForm} from "react-hook-form";
 import {CldUploadButton} from "next-cloudinary";
 import Loader from "@components/Loader";
-import toast from "react-hot-toast";
-import {router} from "next/client";
 
 const Profile = () => {
     const {data: session} = useSession();
