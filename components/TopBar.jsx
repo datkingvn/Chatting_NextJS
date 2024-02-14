@@ -70,7 +70,7 @@ const TopBar = () => {
                         >
                             <div className="flex items-center">
                                 <img
-                                    className="w-9 h-9 rounded-full mr-2"
+                                    className="w-9 h-9 rounded-full object-cover object-center mr-2"
                                     src={user?.profileImage || 'assets/person.jpg'}
                                     alt="Avatar"
                                 />

@@ -92,7 +92,7 @@ const Contacts = () => {
                             <img
                                 src={user?.profileImage || "/assets/person.jpg"}
                                 alt="Profile Photo User"
-                                className="w-10 h-10 rounded-full"
+                                className="profilePhoto"
                             />
                             <p className="text-base-bold text-gray-800">{user.username}</p>
                         </div>
@@ -128,7 +128,7 @@ const Contacts = () => {
                     {
                         selectedContacts.length !== 0 && (
                             <button className="btn uppercase" onClick={createChat}>
-                                Tạo Cuộc Trò Chuyện Mới
+                                Tìm Hoặc Tạo Cuộc Trò Chuyện Mới
                             </button>
                         )
                     }
