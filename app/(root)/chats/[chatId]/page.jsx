@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, {useEffect} from 'react';
 import TopBar from "@components/TopBar";
 import {useParams} from "next/navigation";
 import {useSession} from "next-auth/react";
@@ -12,6 +12,27 @@ const ChatPage = () => {
     const {data: session} = useSession();
     const currentUser = session?.user;
 
+    const seenMessages = async () => {
+        try {
+            await fetch(`/api/chats/${chatId}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    currentUserId: currentUser._id
+                })
+            })
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    useEffect(() => {
+        if (currentUser && chatId) {
+            seenMessages()
+        }
+    }, [currentUser, chatId]);
 
     return (
         <>
